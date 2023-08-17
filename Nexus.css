@@ -1,0 +1,397 @@
+/*===========================================================================
+	Fixes and removals
+=============================================================================*/
+
+body, #center {
+	min-width: initial;
+}
+
+ul li {
+	background: none;
+}
+
+#squeeze .left-corner > h2::before, #tabs-wrapper > h2::before {
+	content: "";
+	padding-right: 0;
+}
+
+.node .picture {
+	display: none;
+}
+
+pre {
+	white-space: normal;
+}
+
+.node {
+	margin-top: 0;
+}
+
+/*===========================================================================
+	Node
+=============================================================================*/
+
+/* Styles below applied to main and everything inside main. */
+
+.node h3, .node h4 {
+	text-align: center;
+	margin: 0.5em 0;
+}
+
+.node h3 {
+	font-size: 1.75em;
+	/* margin-right: 0; */
+	padding-top: 0;
+}
+
+.node .content, .node h3 {
+	color: #EFE6E0;
+}
+
+/*===========================================================================
+	Main block
+=============================================================================*/
+
+#main-block {
+	background-color: #1A1411;
+	width: 700px;
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	box-sizing: border-box;
+	padding: 1em 6em;
+	text-align: center;
+}
+
+#main-block > header /* old */, #disclaimer-container {
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+
+/*===========================================================================
+	Nexus boxes
+=============================================================================*/
+
+/* Styles below applied to only the boxes */
+
+.content-box {
+	background-color: #4D3C32;
+	/* padding: 1.2em; */
+	margin: 2em; /* Delete? */
+	margin-left: auto;
+	margin-right: auto;
+	/* width: 50%; */
+	padding: 2em;
+	overflow: hidden; /* No scroll bar for boxes */
+}
+
+#axioms ol /* old */, /* #rules */ #rules-list {
+	text-align: justify;
+	padding-left: 20px;
+}
+
+/*===========================================================================
+	Accordions: Functional
+=============================================================================*/
+
+.accordion {
+	max-height: 0;
+	overflow: hidden;
+	-moz-transition: max-height 0.5s linear 0s;
+	-webkit-transition: max-height 0.5s linear 0s;
+	transition: max-height 0.5s linear 0s;
+}
+
+.accordion > .accordion-inner /* old */, .accordion > .accordion-content {
+	overflow: auto;
+}
+
+.accordion-checkbox:checked + .accordion {
+	max-height: 50em; /* Must change when max section size increases */
+}
+
+.accordion-checkbox {
+	display: none;
+}
+
+/*===========================================================================
+	Accordions: Style
+=============================================================================*/
+
+.accordions-box > p {
+	text-align: initial;
+}
+
+.accordion {
+	padding: 0 1em;
+	background-color: #EFE6E0;
+	color: #1A1411;
+}
+
+/*.accordions-box > */.accordion {
+	/* background-color: grey; */
+	text-align: initial;
+	/* padding: 1em; */
+}
+
+/*
+.content-box .accordion-label:nth-of-type(odd) {
+	background-color: black;
+}
+
+.content-box .accordion-label:nth-of-type(even) {
+	background-color: blue;
+}
+*/
+
+/*.content-box */.accordion-label {
+	display: block; /* Makes label clickable across entire row. */
+	position: relative; /* Deals with vertically centering an img placed in label tag. */
+	text-align: center;
+	padding: 0.5em;
+	font-size: 1.2em;
+}
+
+.accordion-label:hover {
+	text-decoration: underline;
+}
+
+/*.accordions-box*/ .accordion-label .character-icon {
+	position: absolute;
+	margin-left: 0.5em;
+	top: 0;
+	bottom: 0;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+.accordion-label:nth-of-type(odd) {
+	background-color: #261E19;
+}
+
+.accordion-label:nth-of-type(even) {
+	background-color: #40322A;
+}
+
+.accordion-label[for='hum'] {
+	background-color: #FFF8E7;
+	color: #000000;
+}
+
+.accordion-label[for='stone'] {
+	background-color: #514844;
+	color: #E9E4D3;
+}
+
+.accordions-box .accordions-header {
+	margin: 0 0 1em;
+}
+
+.accordions-header + .tooltip {
+	margin-top: -1em;
+}
+
+/*===========================================================================
+	Content Boxes: Individual Styles
+=============================================================================*/
+
+#updates > div {
+	text-align: initial;
+}
+
+#axioms /* old */, #rules {
+	overflow-y: auto; /* Overwrites default overflow-y style for boxes */
+	height: 35em; /* Cutoff height for box/overflow */
+}
+
+#axioms > h3 /* old */, #rules > #rules-header {
+	/* margin: 0.5em 0; */
+}
+
+/*===========================================================================
+	Definition Box
+=============================================================================*/
+
+.definition-box {
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: left;
+}
+
+.definition-box dfn {
+	font-style: normal;
+	font-weight: bold;
+}
+
+/*===========================================================================
+	Tooltips
+=============================================================================*/
+
+#disclaimer {
+	margin: 0;
+}
+
+/* Initial state of tooltip */
+.tooltip {
+	display: none;
+	position: absolute;
+	left: 0;
+	right: 0;
+	/* top: 18px; */
+	text-align: justify;
+	z-index: 2;
+	background-color: #322721;
+	padding: 0.75em;
+	border-radius: 2em;
+	/* margin-top: -0.75em; */
+}
+
+/* Initial state of tooltip's container */
+.tooltip-container {
+	position: relative;
+	display: block;
+	/* text-align: center; */
+}
+
+/* Initial state of the marker that is to be hovered over. */
+.node .tooltip-marker {
+	margin-left: auto;
+	margin-right: auto;
+	width: auto;
+	display: inline-block;
+	/* padding: 0.5em 0; */
+	/* margin: 0; */
+	border-bottom: 1px dashed;
+}
+
+/* What happens to tooltip when marker is hovered over. */
+.tooltip-marker:hover + .tooltip {
+	display: block;
+}
+
+.tooltip:hover {
+	display: block; /* Prevents tooltip from disappearing when it is hovered over. */
+}
+
+/*===========================================================================
+	Pullouts
+=============================================================================*/
+
+.pullout {
+	margin-top: 1em;
+	margin-left: 3em;
+	margin-right: 6em;
+}
+
+.pullout .comment .content {
+	margin: 0;
+}
+
+.pullout .comment .submitted {
+	width: auto;
+	text-align: center;
+}
+
+/*===========================================================================
+	Clickwrap
+=============================================================================*/
+
+#clickwrap-container {
+	display: none;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: black;
+	/* padding: 1em; */
+	z-index: 9999;
+	border-radius: 0 !important;
+}
+
+#clickwrap {
+	text-align: justify;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 100%;
+	width: 50%;
+	min-width: 20em;
+	margin-top: 12%;
+}
+
+#clickwrap button:first-of-type {
+	float: left;
+}
+
+#clickwrap button:last-of-type {
+	float: right;
+}
+
+#wrapper #container #center .right-corner {
+	position: static;
+}
+
+/*===========================================================================
+	Comment Form
+=============================================================================*/
+
+.gms-comment-form {
+	/* Center the comment form. */
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	/* max-width: 33em; */
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+.gms-comment-form .smileys-box > fieldset {
+	/* Center the comment form's smileys fieldset. */
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* The type of comment form, whether "Add", "Edit", or "Reply"; listed before the comment form. */
+#squeeze .gms-comment-form > h2 {
+	/* Unshift it. */
+	margin-right: 0;
+}
+
+.gms-comment-form .tips {
+	/* Center the tips. */
+	margin-left: auto;
+	margin-right: auto;
+	/* Pull in the bullets from the left side. */
+	display: inline-block;
+	text-align: initial;
+}
+
+.gms-comment-form > .gms-progress-box {
+	/* Prevents progress box from getting squished by the stuff above it. */
+	margin-top: 0.5em;
+}
+
+.preview {
+	text-align: initial;
+}
+
+.form-textarea {
+	max-width: 100%;
+}
+
+.gms-comment-form .form-submit {
+	margin-top: 1em;
+}
+
+.gms-comment-form .form-submit[disabled='disabled'] {
+	color: gray;
+}
+
+/*===========================================================================
+	Loading comments styling
+=============================================================================*/
+.gms-comments-ready, #comments .gms-progress-box {
+	text-align: center;
+	margin-top: 1em;
+}
