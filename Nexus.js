@@ -139,17 +139,17 @@ requirejs(["jquery"], function($) {
 		});
 	});
 	
-	requirejs(["gms-ajax", "gms-page", "jquery"], function(ajax, page, $) {
-		// This if-statement is here because another blog entry shares Nexus.js.
-		if (page.nodeNum === "114750") { // For Nexus.
-			ajax.get("https://raw.githack.com/HarmoniousHum/Nexus/main/updates.html", {
-				load: function(doc) {
-					var updates = document.adoptNode(doc.getElementById("updates"));
-					$("#disclaimer-container").after(updates);
-				}
-			});
-		}
-	});
+	//requirejs(["gms-ajax", "gms-page", "jquery"], function(ajax, page, $) {
+	//	// This if-statement is here because another blog entry shares Nexus.js.
+	//	if (page.nodeNum === "114750") { // For Nexus.
+	//		ajax.get("https://dl.dropboxusercontent.com/s/2jmsechyo7yi3vr/Nexus-updates.html", {
+	//			load: function(doc) {
+	//				var updates = document.adoptNode(doc.getElementById("updates"));
+	//				$("#disclaimer-container").after(updates);
+	//			}
+	//		});
+	//	}
+	//});
 	
 
 	// var content = $('.accordion');
